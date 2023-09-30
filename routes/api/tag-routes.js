@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     })
     res.status (200).json(tagData)    
   }catch(err){
-    res.status(404).json('No data found: Products table could not be built');
+    res.status(404).json('No data found: Tags table could not be built');
   }
 });
 
@@ -26,15 +26,15 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try{
-    const tagData = await Tag.findAll({
+    const tagData = await Tag.findByPk(req.params.id, {
       include: [
         {
           model: Product,
           through: ProductTag,
           as: 'products', 
         },
-      ]
-    })
+      ],
+    });
     res.status (200).json(tagData)    
   }catch(err){
     res.status(404).json('No data found: Product ID could not be found');
@@ -112,12 +112,12 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try{
-    const tagData = await Tag.destroy(
+    const deletedTag = await Tag.destroy(
       {where: {
       id: req.params.id
       } 
   })  
-  res.status (200).json(tagData) 
+  res.status (200).json(deletedTag) 
   }catch(err){
     res.status(404).json('No data found: Tag was NOT deleted');
   }
