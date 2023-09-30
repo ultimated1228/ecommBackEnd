@@ -125,7 +125,7 @@ router.delete('/:id', async (req, res) => {
       return;
     }
 
-    res.status(204).send(); // No content (successful deletion)
+    res.status(200).json({message: "deleted:", deletedProduct}); // No content (successful deletion)
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'No data found: Product was NOT deleted' });
