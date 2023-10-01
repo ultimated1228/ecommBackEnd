@@ -134,13 +134,13 @@ Here are examples of the app in use:
 
 ### Gif showing the various routes in action:
 
-<img src=""><br>
+<img src="./media/Ecomm gif recording.gif"><br>
 
 <hr>
 
 ### Video Walkthrough
 
-[Please click here to see a full video walk through with audio](https://drive.google.com/file/d/1YKCPpLwb83k-V6-a0jg26bQTQqUpUlRa/view?usp=sharing)
+[Please click here to see a full video walk through with audio](https://www.youtube.com/watch?v=zBS9_fS8WI0)
 <br><br>
 
 <p align="right">(<a href="#back_to_top">back to top</a>)</p>
